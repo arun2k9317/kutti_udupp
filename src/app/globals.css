@@ -1,0 +1,113 @@
+@import "@mantine/core/styles.css";
+@import "@mantine/notifications/styles.css";
+
+:root {
+  --ku-bg-primary: #F8F5F0;
+  --ku-bg-secondary: #FFFFFF;
+  --ku-bg-subtle: #F2ECE3;
+  --ku-accent-blush: #EBCBCB;
+  --ku-accent-sage: #A9B8A0;
+  --ku-accent-warm: #C89B72;
+  --ku-text-primary: #35312F;
+  --ku-text-secondary: #77716C;
+  --ku-border: #EAE4DC;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--ku-bg-primary);
+  color: var(--ku-text-primary);
+  font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ku-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.ku-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ku-text-secondary);
+}
+
+.ku-section-padding {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+@media (max-width: 768px) {
+  .ku-section-padding {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.ku-card-hover {
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms ease;
+}
+
+.ku-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(53, 49, 47, 0.06);
+}
+
+.ku-img-zoom {
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ku-card-hover:hover .ku-img-zoom {
+  transform: scale(1.04);
+}
+
+.ku-nav-link {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ku-text-primary);
+  padding: 6px 2px;
+  transition: color 180ms ease;
+}
+
+.ku-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--ku-accent-warm);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.ku-nav-link:hover {
+  color: var(--ku-accent-warm);
+}
+
+.ku-nav-link:hover::after {
+  transform: scaleX(1);
+}
